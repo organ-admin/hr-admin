@@ -1,11 +1,25 @@
-  <el-table [model]="tableData" [stripe]="true" center="all" [scroll-x]="true">
-    <el-table-column model-key="merchId" label="订单编号" [render-html]="true"></el-table-column> 
-     <el-table-column model-key="buyName" label="购货方名称" [render-html]="true"></el-table-column>   -->
-     <!-- <el-table-column model-key="cifName" label="客户名称"></el-table-column>   -->
-     <!-- <el-table-column model-key="prodId" label="规格型号" [render-html]="true"></el-table-column>   -->
-     <!-- <el-table-column model-key="price" label="单价"></el-table-column>   -->
-     <!-- <el-table-column model-key="adress" label="交货地"></el-table-column>   -->
-     <!-- <el-table-column model-key="num" label="购买数量"></el-table-column>  -->
-     <!-- <el-table-column model-key="amount" label="金额"></el-table-column>  -->
-   
+<el-form [inline]="true" size="small" style="margin:30px 0 10px 10px;">
+	<el-form-item label="登陆账号">
+		<el-input></el-input>
+	</el-form-item>
+	<el-form-item label="联系方式">
+		<el-input></el-input>
+	</el-form-item>
+	<el-form-item label="密码">
+		<el-input></el-input>
+	</el-form-item>
+	<el-form-item>
+		<el-button type="submit" claass="btn btn-success">搜索</el-button>
+	</el-form-item>
+</el-form>
+<el-button type="primary" style="position:absolute;top:75px;right:40px;" routerLink="../add">添加</el-button> 
+<el-table [model]="tableData" [stripe]="true" center="all" [scroll-x]="true">
+  <el-table-column model-key="merchId" label="订单编号" [render-html]="true"></el-table-column> 
+  <el-table-column model-key="buyName" label="购货方名称" [render-html]="true"></el-table-column>   -->
+  <el-table-column model-key="cifName" label="客户名称"></el-table-column>
+  <el-table-column model-key="prodId" label="规格型号" [render-html]="true"></el-table-column>   
+  <el-table-column model-key="price" label="单价"></el-table-column>   
+  <el-table-column model-key="adress" label="交货地"></el-table-column>   
+  <el-table-column model-key="num" label="购买数量"></el-table-column>   
+  <el-table-column model-key="amount" label="金额"></el-table-column>   
 </el-table>    

@@ -3,12 +3,11 @@ import { Ajax } from "../../common/ajax";
 import 'rxjs/add/operator/toPromise';
 
 @Component({
-    selector: "uesr-add",
-    templateUrl: "./add.component.html",
-    styleUrls:["./add.component.css"]
+    selector: "fac-list",
+    templateUrl: "./list.component.html"
 })
 
-export class addComponent implements OnInit{
+export class listComponent implements OnInit{
     constructor( private ajax : Ajax){
 
     }
@@ -17,11 +16,12 @@ export class addComponent implements OnInit{
     }
     //获取菜单
     private tableData:any[];
-    private tableUrl="/mer/user/insert";
+    private tableUrl="/fac/financing/list"; 
     private tableParams={
-        useId:"",
-        passwd:"",
-        cell:""
+        cifName:"",
+        bussType:"",
+        buyName:"",
+        prdType:""
     };
 
     get(){
@@ -30,4 +30,10 @@ export class addComponent implements OnInit{
             console.log(this,this.tableData);
         })
     }
+    // handle(ref: any): void {
+    //  console.log(ref.index)
+    // console.log(ref.rowData)
+    // console.log(ref.innerHTML)
+    // ref.destroy()
+    // }
 }

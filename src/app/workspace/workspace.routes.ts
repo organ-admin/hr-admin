@@ -14,11 +14,16 @@ export const workspaceRoutes = [
         loadChildren: '../userModule/user.module#userModule',
         title: '用户管理'
       },
-      // {
-      //   path: 'trade',
-      //   loadChildren: '../tradeModule/trade.module#tradeDemoModule',
-      //   title: '采购管理'
-      //  },
+      {
+        path: 'trade',
+        loadChildren: '../tradeModule/trade.module#tradeModule',
+        title: '采购管理'
+       },
+      {
+        path: 'fac',
+        loadChildren: '../facModule/fac.module#facModule',
+        title: '融资管理'
+       },
       {
         path: '**',
         component: PageNotFoundComponent

@@ -29,10 +29,10 @@ export class listComponent implements OnInit{
             console.log(this,this.tableData);
         })
     }
-    handle(ref: any): void {
-     console.log(ref.index)
+    // handle(ref: any): void {
+    //  console.log(ref.index)
     // console.log(ref.rowData)
     // console.log(ref.innerHTML)
-    ref.destroy()
-    }
+    // ref.destroy()
+    // }
 }

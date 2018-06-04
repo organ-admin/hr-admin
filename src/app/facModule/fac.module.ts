@@ -4,7 +4,7 @@ import { RouterModule } from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule, JsonpModule} from "@angular/http";
 import {MyBreadcrumbModule} from "../components/my-breadcrumb/my-breadcrumb";
-import { tradeRoutes } from "./trade.routes";
+import { facRoutes } from "./fac.routes";
 import { ElModule } from 'element-angular'
 import { listComponent } from './list/list.component';
 import { addComponent } from './add/add.component';
@@ -18,7 +18,7 @@ import { addComponent } from './add/add.component';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    RouterModule.forChild(tradeRoutes),
+    RouterModule.forChild(facRoutes),
     ElModule
   ],
   declarations: [
@@ -29,4 +29,4 @@ import { addComponent } from './add/add.component';
   ],
   exports:[RouterModule]
 })
-export class tradeModule { }
+export class facModule { }

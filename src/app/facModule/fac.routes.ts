@@ -3,7 +3,7 @@ import { addComponent } from './add/add.component';
 // import {Details} from './details';
 //  import {DataTableAdd} from './add';
 
-export const tradeRoutes=[
+export const facRoutes=[
     {
         path: '',
         redirectTo: 'list',

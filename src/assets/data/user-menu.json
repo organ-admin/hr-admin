@@ -5,7 +5,8 @@
     "children": [
       {
         "name": "用户管理",
-        "link": "user-list"
+        "link": "/workspace/user/list",
+        "loadChildren" : "../userModule/user.module#userModule"
        }
     ]
   },
@@ -15,7 +16,7 @@
     "children": [
       {
         "name": "商品采购",
-        "link": "list"
+        "link": "/workspace/trade/list"
       }
     ]
   },
@@ -25,7 +26,7 @@
     "children": [
       {
         "name": "融资查询",
-        "link": "upload"
+        "link": "/workspace/fac/list"
       }
     ]
   }
