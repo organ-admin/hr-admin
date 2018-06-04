@@ -1,54 +1,29 @@
-<!-- <el-form (ngSubmit)="onsubmit(regForm.value)" #regForm="ngForm" [inline]="true" size="small">
-
-  <el-form-item label="登陆账号">
-    <el-input required [(ngModel)]="useId" name="useId"></el-input>
-  </el-form-item>
-  
-  <el-form-item label="联系方式">
-    <el-input required [(ngModel)]="cell" name="cell"></el-input>
-  </el-form-item>
-
-  <el-form-item label="密码">
-    <el-input  required [(ngModel)]="passwd" name="passwd"></el-input>
-  </el-form-item>
-  
-  <el-form-item>
-    <el-button type="submit" claass="btn btn-success">搜索</el-button>
-  </el-form-item> 
-  
- </el-form>  -->
-
 <el-form [inline]="true" size="small" style="margin:30px 0 10px 10px;">
-  <el-form-item label="登陆账号">
-    <el-input></el-input>
-  </el-form-item>
-  <el-form-item label="联系方式">
-    <el-input></el-input>
-  </el-form-item>
-  <el-form-item label="密码">
-    <el-input></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="submit" claass="btn btn-success">搜索</el-button>
-  </el-form-item>  
- </el-form>  
-
-<el-button type="primary" style="position:absolute;top:75px;right:40px;">添加</el-button>
-
-
+	<el-form-item label="登陆账号">
+		<el-input></el-input>
+	</el-form-item>
+	<el-form-item label="联系方式">
+		<el-input></el-input>
+	</el-form-item>
+	<el-form-item label="密码">
+		<el-input></el-input>
+	</el-form-item>
+	<el-form-item>
+		<el-button type="submit" claass="btn btn-success">搜索</el-button>
+	</el-form-item>
+</el-form>
+<el-button type="primary" style="position:absolute;top:75px;right:40px;" routerLink="../add">添加</el-button>
 <el-table [model]="tableData" [stripe]="true" center="all" [scroll-x]="true">
     <el-table-column model-key="id" label="用户id" [render-html]="true"></el-table-column> 
     <!-- <el-table-column model-key="useNoMark" label="用户编号" [render-html]="true"></el-table-column>  --> -->
-     <el-table-column model-key="useId" label="登陆账号"></el-table-column> 
-     <el-table-column model-key="passwd" label="密码" [render-html]="true"></el-table-column>  
-     <el-table-column model-key="cell" label="联系方式"></el-table-column>  
-     <el-table-column model-key="idType" label="证件类型"></el-table-column>  
-     <el-table-column model-key="sex" label="性别"></el-table-column>  
-    <!-- <el-table-column label="操作"width="120"> 
-        <ng-template #slot let-scope="scope">
-            <el-button type="text" size="small" (click)="handle(scope)">编辑</el-button>        
-        </ng-template>  
-    </el-table-column> -->
+    <el-table-column model-key="useId" label="登陆账号"></el-table-column> 
+    <el-table-column model-key="passwd" label="密码" [render-html]="true"></el-table-column>  
+    <el-table-column model-key="cell" label="联系方式"></el-table-column>  
+	<!-- <el-table-column model-key="idType" label="证件类型"></el-table-column> -->
+	<el-table-column model-key="sex" label="性别"></el-table-column>   
+    <!-- <el-table-column label="操作"width="120">
+		<el-button type="text" size="small">编辑</el-button>        
+    </el-table-column>  -->
     <!-- <el-table-column label="操作" width="120">
         <ng-template #slot let-scope="scope">
         <el-button type="text" size="small" (click)="handle(scope)">详情</el-button>

@@ -1,15 +1,15 @@
 import { Component , OnInit} from "@angular/core";
-import { Router } from "@angular/router"
 import { Ajax } from "../../common/ajax";
 import 'rxjs/add/operator/toPromise';
 
 @Component({
-    selector: "uesr-list",
-    templateUrl: "./list.component.html"
+    selector: "uesr-add",
+    templateUrl: "./add.component.html",
+    styleUrls:["./add.component.css"]
 })
 
-export class listComponent implements OnInit{
-    constructor( private ajax : Ajax, private router : Router){
+export class addComponent implements OnInit{
+    constructor( private ajax : Ajax){
 
     }
     ngOnInit(){
@@ -27,15 +27,7 @@ export class listComponent implements OnInit{
     get(){
         this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
             this.tableData=res.records;
+            console.log(this,this.tableData);
         })
-    }
-    handle(ref: any): void {
-        //console.log(ref.index)
-        // console.log(ref.rowData)
-        // console.log(ref.innerHTML)
-        //ref.destroy()
-    }
-    goAdd(){
-        this.router.navigate(["../add"]);
     }
 }
