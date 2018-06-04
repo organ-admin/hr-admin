@@ -25,17 +25,22 @@ export class listComponent implements OnInit{
     };
 
     get(){
-        this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
-            this.tableData=res.records;
-        })
+        // this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
+        //     this.tableData=res.records;
+		// });
+		this.tableData = [
+			{ cell: "789", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
+			{ cell: "790", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
+			{ cell: "791", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
+			{ cell: "792", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
+			{ cell: "793", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
+			{ cell: "794", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
+		]
     }
     handle(ref: any): void {
-        //console.log(ref.index)
+        console.log(ref.index)
         // console.log(ref.rowData)
         // console.log(ref.innerHTML)
         //ref.destroy()
-    }
-    goAdd(){
-        this.router.navigate(["../add"]);
     }
 }

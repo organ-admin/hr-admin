@@ -28,6 +28,6 @@ export class addComponent implements OnInit{
         this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
             this.tableData=res.records;
             console.log(this,this.tableData);
-        })
+		})
     }
 }

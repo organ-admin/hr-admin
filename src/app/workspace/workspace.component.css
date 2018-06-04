@@ -7,7 +7,7 @@
   line-height: 63px;
   font-size: 20px;
   color: #ffffff;
-  
+
 }
 .container{
   width: 100%;
@@ -33,4 +33,5 @@
   -webkit-flex: 1;
   flex: 1;
   overflow: hidden;
+  overflow-y: scroll;
 }

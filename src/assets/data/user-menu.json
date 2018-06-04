@@ -5,8 +5,7 @@
     "children": [
       {
         "name": "用户管理",
-        "link": "/workspace/user/list",
-        "loadChildren" : "../userModule/user.module#userModule"
+        "link": "/workspace/user/list"
        }
     ]
   },

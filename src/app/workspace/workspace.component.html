@@ -5,9 +5,9 @@
 		<div class="aside" width="200px">
 			 <el-menu model="2" class="el-menu-vertical-demo" *ngIf="menus" style="height: 100%;">
 				<el-submenu index="{{i}}" title="{{item.name}}" *ngFor="let item of menus;let i=index;">
-					<el-menu-item index="{{i}}-{{ind}}" *ngFor="let child of item.children;let ind=index;" routerLink="{{child.link}}">{{child.name}}</el-menu-item>
+					<el-menu-item index="{{i}}-{{ind}}" *ngFor="let child of item.children;let ind=index;" to="{{child.link}}">{{child.name}}</el-menu-item>
 				</el-submenu>
-			</el-menu> 
+			</el-menu>
 		</div>
 		<div class="main">
 			 <router-outlet></router-outlet>
