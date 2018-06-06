@@ -14,18 +14,18 @@
 </el-form>
 <el-button type="primary" style="position:absolute;top:75px;right:40px;" routerLink="../add">添加</el-button>
 <el-table [model]="tableData" [stripe]="true" center="all" [scroll-x]="true">
-    <!-- <el-table-column model-key="id" label="用户id" [render-html]="true"></el-table-column> -->
+	<el-table-column model-key="id" label="用户id" [render-html]="true"></el-table-column> 
     <el-table-column model-key="useNoMark" label="用户编号" [render-html]="true"></el-table-column>
     <el-table-column model-key="useId" label="登陆账号"></el-table-column>
     <el-table-column model-key="passwd" label="密码" [render-html]="true"></el-table-column>
     <el-table-column model-key="cell" label="联系方式"></el-table-column>
-	<!-- <el-table-column model-key="idType" label="证件类型"></el-table-column> -->
+	<el-table-column model-key="idType" label="证件类型"></el-table-column> 
 	<el-table-column model-key="sex" label="性别"></el-table-column>
-    <!-- <el-table-column label="操作">
+	<el-table-column label="操作">
         <ng-template #slot let-scope="scope">
 			<el-button type="text" size="small" (click)="handle(scope)">编辑</el-button>
 			<el-button type="text" size="small" (click)="handle(scope)">详情</el-button>
 			<el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
 		</ng-template>
-    </el-table-column> -->
+    </el-table-column> 
 </el-table>

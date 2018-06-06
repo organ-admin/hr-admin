@@ -36,7 +36,7 @@ import {window} from "rxjs/operator/window";
 export class MyGoTop {
   constructor(private el: ElementRef, private renderer: Renderer,) {
     this.renderer.listenGlobal("window", "scroll", (evt: Event) => {
-      const osTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const osTop = document.documentElement.scrollTop || document.getElementsByClassName("main");
       if (osTop > 194) {
         this.goTopState = true;
       }else{

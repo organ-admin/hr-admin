@@ -33,5 +33,5 @@
   -webkit-flex: 1;
   flex: 1;
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }

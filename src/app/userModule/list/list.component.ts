@@ -16,7 +16,7 @@ export class listComponent implements OnInit{
         this.get();
     }
     //获取菜单
-    private tableData:any[];
+    private tableData:any[]=[];
     private tableUrl="/mer/user/list";
     private tableParams={
         useId:"",
@@ -26,21 +26,20 @@ export class listComponent implements OnInit{
 
     get(){
         this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
-            this.tableData=res.records;
+            res.records.forEach(val => {
+                var obj={};
+                obj["id"]=(val.id || "");                
+                obj["useNoMark"]=(val.useNoMark || "");
+                obj["useId"]=(val.useId || "");
+                obj["passwd"]=(val.passwd || "");
+                obj["cell"]=(val.cell || "");
+                obj["idType"]=(val.idType || "");
+                obj["sex"]=(val.sex || "");
+                this.tableData.push(obj);
+            });
 		});
-		// this.tableData = [
-		// 	{ cell: "789", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
-		// 	{ cell: "790", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
-		// 	{ cell: "791", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
-		// 	{ cell: "792", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
-		// 	{ cell: "793", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
-		// 	{ cell: "794", count: 1000, current: 1, delFlag: "1", id: 3, isPage: true, page: 10, passwd: "cuisite", sex: "2", size: 100, useId: "3", useLogname: "yifulin", useName: "yifulin", useNoMark: "3" },
-		// ]
     }
     handle(ref: any): void {
         console.log(ref.index)
-        // console.log(ref.rowData)
-        // console.log(ref.innerHTML)
-        //ref.destroy()
     }
 }
