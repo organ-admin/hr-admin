@@ -34,7 +34,7 @@ export class listComponent implements OnInit{
                 obj["passwd"]=(val.passwd || "");
                 obj["cell"]=(val.cell || "");
                 obj["idType"]=(val.idType || "");
-                obj["sex"]=(val.sex || "");
+                obj["sex"]=(val.sex? (val.sex==1? "男": "女") : "");
                 this.tableData.push(obj);
             });
 		});
