@@ -17,26 +17,42 @@ export class addComponent implements OnInit{
     }
     //获取菜单
     private tableData:any[];
-    private tableUrl="/mer/merchandise/insert";
+    private tableUrl="/fac/financing/insert";
     private tableParams={};
       
 
     // 提交
     onSubmit(value) {
-        if(value.billNo!='' && value.cifName!='' &&value.buyName!='' &&value.no!=''&&value.prodId!=''&&value.adress!=''&&value.price!=''&&value.num!=''&&value.amount!=''&&value.authSts!=''&&value.txDate!=''&&value.merchId!=''){
+        if(value.cifNo!='' && value.bussType!='' &&value.prdType!='' &&value.savAmt!=''&&value.conamtFlt!=''&&value.contAmt!=''&&value.restAmt!=''&&value.bilconAmt!=''&&value.amount!=''&&value.authSts!=''&&value.txDate!=''&&value.merchId!=''){
             this.tableParams={
-                merchId	: value.merchId,
-                billNo : value.billNo,		
-                cifName : value.cifName,	 	
-                buyName : value.buyName,			
-                no : value.no,		
-                prodId : value.prodId,	
-                adress : value.adress,		
-                price : value.price,		
-                num : value.num,		
-                amount : value.amount,		
-                // authSts : value.authSts,		
-                // txDate : value.txDate,			              		          	
+                cifNo : value.cifNo,
+                bussType : value.bussType,
+                prdType : value.prdType,
+                savAmt : value.savAmt,
+                conamtFlt : value.conamtFlt,
+                contAmt : value.contAmt,
+                restAmt : value.restAmt,
+                bilconAmt : value.bilconAmt,
+                appAmt : value.appAmt,
+                term : value.term,
+                feeRate : value.feeRate,
+                fucFee : value.fucFee,
+                bilFee : value.bilFee,
+                brcContAmt : value.brcContAmt,
+                appidType : value.appidType,
+                appidNo : value.appidNo,
+                appMark : value.appMark,
+                corargFlg : value.corargFlg,
+                corName : value.corName,
+                // "coridType": "1",
+                // "corNo": "1",
+                // "corMark": "1",
+                // "othargFlg": "1",
+                // "othName": "1",
+                // "othidType": "1",
+                // "othidNo": "1",
+                // "othMark": "1",
+                // "useNo": "1"	              		          	
             };
             this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
                 console.log(res.msg)

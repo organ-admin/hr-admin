@@ -1,16 +1,23 @@
 <form #myForm = "ngForm" (ngSubmit) = "onSubmit(myForm.value)">
-   <div><span>订单编号：</span><input ngModel type="text" name="merchId"/></div>
-   <div><span>发票号码：</span><input ngModel type="text" name="billNo"/></div>  
-   <div><span>客户名称：</span><input ngModel type="text" name="cifName"/></div>
-   <div><span>购货方名称：</span><input ngModel type="text" name="buyName"/></div>
-   <div><span>商品序号：</span><input ngModel type="text" name="no"/></div>
-   <div><span>规格型号：</span><input ngModel type="text" name="prodId"/></div>
-   <div><span>交货地：</span><input ngModel type="text" name="adress"/></div>
-   <div><span>单价：</span><input ngModel type="text" name="price"/></div>
-   <div><span>购买数量：</span><input ngModel type="text" name="num"/></div>
-   <div><span>金额：</span><input ngModel type="text" name="amount"/></div>
-   <div><span>订单状态：</span><input ngModel type="text" name="authSts"/></div> 
-   <div><span>登记日期：</span><input ngModel type="text" name="txDate"/></div> 
+   <div><span>客户编号：</span><input ngModel type="text" name="cifNo"/></div>
+   <div><span>业务类型：</span><input ngModel type="text" name="bussType"/></div>  
+   <div><span>金融产品类别：</span><input ngModel type="text" name="prdType"/></div>
+   <div><span>担保金额：</span><input ngModel type="text" name="savAmt"/></div>
+   <div><span>融资比例：</span><input ngModel type="text" name="conamtFlt"/></div>
+   <div><span>已融资金额：</span><input ngModel type="text" name="contAmt"/></div>
+   <div><span>可用额度：</span><input ngModel type="text" name="restAmt"/></div>
+   <div><span>发票对于可用融资额度：</span><input ngModel type="text" name="bilconAmt"/></div>
+   <div><span>本次融资可申请金额：</span><input ngModel type="text" name="appAmt"/></div>
+   <div><span>融资手续费比例：</span><input ngModel type="text" name="term"/></div>
+   <div><span>融资手续费率：</span><input ngModel type="text" name="feeRate"/></div> 
+   <div><span>资金调查费：</span><input ngModel type="text" name="fucFee"/></div> 
+   <div><span>发票处理费：</span><input ngModel type="text" name="bilFee"/></div>
+   <div><span>违约费：</span><input ngModel type="text" name="brcContAmt"/></div>
+   <div><span>直接购货方建议确认：</span><input ngModel type="text" name="appargFlg"/></div>
+   <div><span>直接购货方备注：</span><input ngModel type="text" name="appMark"/></div>
+   <div><span>直接购货方证件号码：</span><input ngModel type="text" name="appidNo"/></div>
+   <div><span>核心企业交易确认：</span><input ngModel type="text" name="corargFlg"/></div> 
+   <div><span>核心企业名称：</span><input ngModel type="text" name="corName"/></div> 
    <div><input class="btn" type="submit" value="提交"/></div>
 </form>
    <!-- <table>
@@ -51,3 +58,15 @@
      </tr>
    </table> -->
 <h2 id="minMsgspan"></h2>
+
+         
+<!--       
+            "coridType": "1",
+            "corNo": "1",
+            "corMark": "1",
+            "othargFlg": "1",
+            "othName": "1",
+            "othidType": "1",
+            "othidNo": "1",
+            "othMark": "1",
+            "useNo": "1" -->

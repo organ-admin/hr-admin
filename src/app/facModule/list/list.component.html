@@ -1,21 +1,11 @@
-<el-form [inline]="true" size="small" style="margin:30px 0 10px 10px;">
-	<el-form-item label="客户名称">
-		<el-input></el-input>
-	</el-form-item>
-	<el-form-item label="业务类型">
-		<el-input></el-input>
-	</el-form-item>
-	<el-form-item label="购货方名称">
-		<el-input></el-input>
-	</el-form-item>
-	<el-form-item label="金融产品类别">
-		<el-input></el-input>
-	</el-form-item>
-	<el-form-item>
-		<el-button type="submit" claass="btn btn-success">搜索</el-button>
-	</el-form-item>
-</el-form>
-<!-- cifName bussType buyName prdType-->
+<form id="form" #myForm = "ngForm" (ngSubmit) = "onSubmit(myForm.value)">
+   <div><span>客户名称</span><input ngModel type="text" name="cifName"/></div>
+   <div><span>业务类型</span><input ngModel type="text" name="bussType"/></div>  
+   <div><span>购货方名称</span><input ngModel type="text" name="buyName"/></div>
+   <div><span>金融产品类别</span><input ngModel type="text" name="prdType"/></div>   
+   <div><input class="btns" type="submit" value="搜索"/></div>
+</form>
+<h2 id="minMsgspan"></h2>
 <el-button type="primary" style="position:absolute;top:75px;right:40px;" routerLink="../add">添加</el-button>  
  <el-table [model]="tableData" [stripe]="true" center="all" [scroll-x]="true">
   <el-table-column model-key="cifNo" label="客户编号" [render-html]="true"></el-table-column> 
