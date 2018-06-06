@@ -1,6 +1,11 @@
 {
   "/mer": {
-    "target": "http://localhost:8090",
+    "target": "http://115.239.255.190:8090",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/fac": {
+    "target": "http://115.239.255.190:8090",
     "secure": false,
     "changeOrigin": true
   }

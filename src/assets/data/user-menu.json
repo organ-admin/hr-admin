@@ -1,7 +1,7 @@
 [
   {
     "name": "用户管理",
-    "icon": "fa-database",
+  
     "children": [
       {
         "name": "用户管理",
@@ -11,7 +11,7 @@
   },
   {
     "name": "交易管理",
-    "icon": "fa-line-chart",
+ 
     "children": [
       {
         "name": "商品采购",
@@ -21,7 +21,7 @@
   },
   {
     "name": "业务管理",
-    "icon": "fa-upload",
+
     "children": [
       {
         "name": "融资查询",

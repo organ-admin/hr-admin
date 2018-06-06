@@ -1,0 +1,26 @@
+input{
+    height:45px;
+    border: 1px soled #ccc;
+}
+div span{
+    width: 200px;
+    display: inline-block;
+    text-align: right;
+}
+.btn{
+    float: right;
+    color: #fff;
+    background-color: #409EFF;
+    border-color: #409EFF;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+#minMsgspan{
+    display:none;
+    position: absolute;
+    top: 25px;
+    left: 400px;
+    color: #fff;
+}
