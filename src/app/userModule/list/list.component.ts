@@ -16,6 +16,8 @@ export class listComponent implements OnInit{
     ngOnInit(){
         this.get();
     }
+    private editShow:boolean=false;
+    private detailsShow:boolean=false;
     //删除接口
     private tableParam={};
     private tableUrls="/mer/user/delete";
@@ -27,7 +29,7 @@ export class listComponent implements OnInit{
         passwd:"",
         cell:""
     };
-
+    // 获取列表
     get(){
         this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
             res.records.forEach(val => {
@@ -50,12 +52,11 @@ export class listComponent implements OnInit{
         //         cancelButtonText: '取消',
         //         type: 'warning'
         // })
-        let row = ref.rowData;   
+        let row = ref.rowData;
         this.tableParam={
             id : row.id	                 	
         };
         this.ajax.post(this.tableUrls,this.tableParam).toPromise().then((res:any)=>{
-            // console.log(res.msg)
             this.tableData=res.records;
             console.log(this,this.tableData);
             let min = document.getElementById("minMsgspan");
@@ -69,34 +70,29 @@ export class listComponent implements OnInit{
     }
     // 编辑
     upbtns(ref: any): void {
-        console.log(ref.rowData);
-        // this.car = true
+        this.editShow=true;
     }
     // 详情
-    addMsg(ref: any): void {
+    details(ref: any): void {
         // console.log(ref.rowData.id);
-      
+        this.detailsShow=true;
     }
-
     // 搜索
     onSubmit(value) {
-
-            this.tableParams={
-                cell : value.cell,		
-                passwd : value.passwd,	 	
-                useId : value.useId                	
-            };
-            this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
-                console.log(res.msg)
-                this.tableData=res.records;
-                console.log(this,this.tableData);
-                let min = document.getElementById("minMsgspan");
-                min.style.display="block";
-                min.innerHTML='搜索'+res.msg;
-                setTimeout(function () {
-                    min.style.display="none";
-                }, 2000);
-            })  
+        this.tableParams={
+            cell : value.cell,		
+            passwd : value.passwd,	 	
+            useId : value.useId                	
+        };
+        this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
+            this.tableData=res.records;
+            let min = document.getElementById("minMsgspan");
+            min.style.display="block";
+            min.innerHTML='搜索'+res.msg;
+            setTimeout(function () {
+                min.style.display="none";
+            }, 2000);
+        })  
     }
     
 }
