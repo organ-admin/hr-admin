@@ -1,0 +1,52 @@
+#search{
+    margin:30px 0 10px 10px;
+}
+.btn{
+    position: absolute;
+    bottom : 15px;
+    right: 110px;
+    color: #fff;
+    background-color: #409EFF;
+    border-color: #409EFF;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+#car{
+    display:none;
+}
+#form{
+    background: #cccccc;
+}
+#form div{
+    display: inline-block;
+    line-height: 55px;
+}
+#form div span{
+    margin-right: 5px;
+}
+.inp{
+    height: 32px;
+    padding-left: 10px;
+    border-radius: 4px;
+}
+.btns{
+    position: absolute;
+    top : 75px;
+    right: 210px;
+    color: #fff;
+    background-color: #409EFF;
+    border-color: #409EFF;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+#minMsgspan{
+    display:none;
+    position: absolute;
+    top: 25px;
+    left: 400px;
+    color: #fff;
+}
