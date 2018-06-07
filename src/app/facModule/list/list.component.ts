@@ -4,7 +4,8 @@ import 'rxjs/add/operator/toPromise';
 
 @Component({
     selector: "fac-list",
-    templateUrl: "./list.component.html"
+    templateUrl: "./list.component.html",
+    styleUrls:["./list.component.css"]
 })
 
 export class listComponent implements OnInit{
@@ -15,7 +16,7 @@ export class listComponent implements OnInit{
         this.get();
     }
     //获取菜单
-    private tableData:any[];
+    private tableData:any[]=[];
     private tableUrl="/fac/financing/list"; 
     private tableParams={
         cifName:"",
@@ -28,6 +29,33 @@ export class listComponent implements OnInit{
         this.ajax.post(this.tableUrl,this.tableParams).toPromise().then((res:any)=>{
             this.tableData=res.records;
             console.log(this,this.tableData);
+            this.tableData=res.records;
+            // console.log(this,this.tableData);
+             res.records.forEach(val => {
+                var obj={};
+                obj["cifNo"]=(val.cifNo || "");                
+                obj["buyName"]=(val.buyName || "");
+                obj["cifName"]=(val.cifName || "");
+                obj["prdType"]=(val.prdType || "");
+                obj["savAmt"]=(val.savAmt || "");
+                obj["conamtFlt"]=(val.conamtFlt || "");
+                obj["contAmt"]=(val.contAmt || "");
+                obj["restAmt"]=(val.restAmt || "");
+                obj["bilconAmt"]=(val.bilconAmt || "");                
+                obj["appAmt"]=(val.appAmt || "");
+                obj["term"]=(val.term || "");
+                obj["feeRate"]=(val.feeRate || "");
+                obj["fucFee"]=(val.fucFee || "");
+                obj["bilFee"]=(val.bilFee || "");
+                obj["brcContAmt"]=(val.brcContAmt || "");
+                obj["appargFlg"]=(val.appargFlg || "");
+                obj["appMark"]=(val.appMark || "");
+                obj["appidNo"]=(val.appidNo || "");                
+                obj["corargFlg"]=(val.corargFlg || "");
+                obj["corName"]=(val.corName || "");
+                // obj["sex"]=(val.sex? (val.sex==1? "男": "女") : "");
+                this.tableData.push(obj);
+            });
         })
     }
      // 搜索

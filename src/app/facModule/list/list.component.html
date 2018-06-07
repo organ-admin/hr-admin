@@ -1,10 +1,13 @@
-<form id="form" #myForm = "ngForm" (ngSubmit) = "onSubmit(myForm.value)">
-   <div><span>客户名称</span><input ngModel type="text" name="cifName"/></div>
-   <div><span>业务类型</span><input ngModel type="text" name="bussType"/></div>  
-   <div><span>购货方名称</span><input ngModel type="text" name="buyName"/></div>
-   <div><span>金融产品类别</span><input ngModel type="text" name="prdType"/></div>   
-   <div><input class="btns" type="submit" value="搜索"/></div>
-</form>
+<div class="box">
+  <form id="form" #myForm = "ngForm" (ngSubmit) = "onSubmit(myForm.value)">
+    <div><span>客户名称</span><input class="inp" ngModel type="text" name="cifName"/></div>
+    <div><span>业务类型</span><input class="inp" ngModel type="text" name="bussType"/></div>  
+    <div><span>购货方名称</span><input class="inp" ngModel type="text" name="buyName"/></div>
+    <div class="brs"><span>金融产品类别</span><input class="inp" ngModel type="text" name="prdType"/></div>   
+    <div><input class="btns" type="submit" value="搜索"/></div>
+  </form>
+</div>
+
 <h2 id="minMsgspan"></h2>
 <el-button type="primary" style="position:absolute;top:75px;right:40px;" routerLink="../add">添加</el-button>  
  <el-table [model]="tableData" [stripe]="true" center="all" [scroll-x]="true">
@@ -16,4 +19,11 @@
   <el-table-column model-key="savAmt" label="担保金额"></el-table-column>   
   <el-table-column model-key="bilFee" label="发票处理费"></el-table-column>   
   <el-table-column model-key="useNo" label="业务员编号"></el-table-column>   
+  <el-table-column label="操作">
+        <ng-template #slot let-scope="scope" class="box-card" #card>
+			<el-button type="text" size="small" (click)="car = true">编辑</el-button>
+			<el-button type="text" size="small" (click)="handle(scope)">详情</el-button>
+			<el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
+		</ng-template>
+    </el-table-column> 
 </el-table>     
