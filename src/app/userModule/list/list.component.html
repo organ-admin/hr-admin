@@ -1,9 +1,9 @@
 
 <form id="form" #myForm = "ngForm" (ngSubmit) = "onSubmit(myForm.value)">
-   <div><span>登陆账号</span><input class="inp" ngModel type="text" name="useId"/></div>
-   <div><span>联系方式</span><input class="inp" ngModel type="text" name="cell"/></div>  
-   <div><span>密码</span><input class="inp" ngModel type="text" name="passwd"/></div>
-   <div><input class="btns" type="submit" value="搜索"/></div>
+	<div><span>登陆账号</span><input class="inp" ngModel type="text" name="useId"/></div>
+	<div><span>联系方式</span><input class="inp" ngModel type="text" name="cell"/></div>  
+	<div><span>密码</span><input class="inp" ngModel type="text" name="passwd"/></div>
+	<div><input class="btns" type="submit" value="搜索"/></div>
 </form>
 <h2 id="minMsgspan"></h2>
 <el-button type="primary" style="position:absolute;top:75px;right:40px;" routerLink="../add">添加</el-button>
@@ -17,16 +17,16 @@
 	<el-table-column model-key="sex" label="性别"></el-table-column>
 	<el-table-column label="操作">
         <ng-template #slot let-scope="scope" class="box-card" #card>
-			<el-button type="text" size="small" (click)="car = true">编辑</el-button>
-			<el-button type="text" size="small" (click)="getMsg(scope)">详情</el-button>
+			<el-button type="text" size="small" (click)="upbtns(scope)">编辑</el-button>
+			<el-button type="text" size="small" (click)="details(scope)">详情</el-button>
 			<el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
 		</ng-template>
     </el-table-column> 
 </el-table>
 
-  <el-dialog [(visible)]="car">
+<el-dialog [(visible)]="editShow">
     <ng-template #title>
-      <span>用户编辑</span>	
+      	<span>用户编辑</span>	
     </ng-template>
 	<span></span>
 	<form #myForm = "ngForm" (ngSubmit) = "onSubmit(myForm.value)">
@@ -48,11 +48,15 @@
 		<div><span>最后更新时间：</span><input ngModel type="text" name="lastLogTime"/></div>
 		<div><span>登录次数：</span><input ngModel type="text" name="logNos"/></div> -->
 		<div><input class="btn" type="submit" value="提交"/></div>
-		</form>
+	</form>
     <ng-template #footer>
 		<!-- <el-button (click)="upbtn">确定</el-button> -->
         <el-button (click)="car = false">取消</el-button>
     </ng-template>
-  </el-dialog>
+</el-dialog>
 
-
+<el-dialog [(visible)]="detailsShow">
+	<ng-template #title>
+      	<span>用户详情</span>
+    </ng-template>
+</el-dialog>
