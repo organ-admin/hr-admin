@@ -17,7 +17,7 @@
 	<el-table-column model-key="sex" label="性别"></el-table-column>
 	<el-table-column label="操作">
         <ng-template #slot let-scope="scope" class="box-card" #card>
-			<el-button type="text" size="small" (click)="upbtns(scope,mysForm.value)">编辑</el-button>
+			<el-button type="text" size="small" (click)="upbtns(scope)">编辑</el-button>
 			<el-button type="text" size="small" (click)="details(scope)">详情</el-button>
 			<el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
 		</ng-template>
@@ -29,20 +29,20 @@
       	<span>用户编辑</span>	
     </ng-template>
 	<span></span>
-	<form #mysForm = "ngForm" (ngSubmit) = "onSubmit(mysForm.value)">
-		<div><span>用户编号：</span><input ngModel type="text" name="useNoMark"/></div>
-		<div><span>用户名称：</span><input ngModel type="text" name="useName"/></div>  
-		<div><span>登陆账号：</span><input ngModel type="text" name="useId"/></div>
-		<!-- <div><span>用户登陆名：</span><input ngModel type="text" name="useLogname"/></div> -->
-		<div><span>初始登录密码：</span><input ngModel type="text" name="passwd"/></div>
-		<div><span>性别：</span><input ngModel type="text" name="sex"/></div>
-		<div><span>证件类型：</span><input ngModel type="text" name="idType"/></div>
-		<div><span>证件号：</span><input ngModel type="text" name="idNo"/></div>
-		<div><span>联系方式：</span><input ngModel type="text" name="cell"/></div>
-		<div><span>电子邮件地址：</span><input ngModel type="text" name="email"/></div>
-		<div><span>机构名称：</span><input ngModel type="text" name="corpName"/></div>
-		<div><span>机构编码：</span><input ngModel type="text" name="corpMark"/></div>
-		<div><span>职务：</span><input ngModel type="text" name="jobName"/></div>
+	<form (ngSubmit) = "editSubmit()">
+		<div><span>用户编号：</span><input type="text" name="useNoMark" [(ngModel)]="editDate.useNoMark"/></div>
+		<div><span>用户名称：</span><input type="text" name="useName" [(ngModel)]="editDate.useName"/></div>  
+		<div><span>登陆账号：</span><input type="text" name="useId" [(ngModel)]="editDate.useId"/></div>
+		<!-- <div><span>用户登陆名：</span><input ngModel type="text" name="useLogname" [(ngModel)]="editDate.useNoMark"/></div> -->
+		<div><span>初始登录密码：</span><input type="text" name="passwd" [(ngModel)]="editDate.passwd"/></div>
+		<div><span>性别：</span><input type="text" name="sex" [(ngModel)]="editDate.sex"/></div>
+		<div><span>证件类型：</span><input type="text" name="idType" [(ngModel)]="editDate.idType"/></div>
+		<div><span>证件号：</span><input type="text" name="idNo" [(ngModel)]="editDate.idNo"/></div>
+		<div><span>联系方式：</span><input type="text" name="cell" [(ngModel)]="editDate.cell"/></div>
+		<div><span>电子邮件地址：</span><input type="text" name="email" [(ngModel)]="editDate.email"/></div>
+		<div><span>机构名称：</span><input type="text" name="corpName" [(ngModel)]="editDate.corpName"/></div>
+		<div><span>机构编码：</span><input type="text" name="corpMark" [(ngModel)]="editDate.corpMark"/></div>
+		<div><span>职务：</span><input type="text" name="jobName" [(ngModel)]="editDate.jobName"/></div>
 		<!-- <div><span>角色：</span><input ngModel type="text" name="rolMark"/></div>
 		<div><span>登录时间：</span><input ngModel type="text" name="logTime"/></div>
 		<div><span>最后更新时间：</span><input ngModel type="text" name="lastLogTime"/></div>
@@ -51,7 +51,7 @@
 	</form>
     <ng-template #footer>
 		<!-- <el-button (click)="upbtn">确定</el-button> -->
-        <el-button (click)="car = false">取消</el-button>
+        <el-button (click)="editShow = false">取消</el-button>
     </ng-template>
 </el-dialog>
 

@@ -20,7 +20,22 @@ export class listComponent implements OnInit{
     private detailsShow:boolean=false;
     private tableUrld="/mer/user/select";
     //编辑接口
-    private mysForm:any[];    
+    private mysForm:any[];
+    private editDate:Object={
+        id:1,
+        useNoMark:"",
+        useName:"",
+        useId:"",
+        passwd:"",
+        sex:"",
+        idType:"",
+        idNo:"",
+        cell:"",
+        email:"",
+        corpName:"",
+        corpMark:"",
+        jobName:""
+    };
     private tableUrlup="/mer/user/update";
     //删除接口
     private tableParam={};
@@ -73,7 +88,7 @@ export class listComponent implements OnInit{
         ref.destroy();
     }
     // 编辑
-    upbtns(ref: any,value): void {
+    upbtns(ref: any): void {
         this.editShow=true;
         this.mysForm  = ref.rowData;
         let row = ref.rowData;
@@ -81,29 +96,8 @@ export class listComponent implements OnInit{
             id : row.id	                 	
         };
         this.ajax.post(this.tableUrld,this.tableParam).toPromise().then((res:any)=>{
-            console.log(res)
-            console.log(value)
-            // value=res.records;
-            value.cell = res.cell;
-            value.corpMark = res.corpMark;
-            value.corpName = res.corpName; 
-            value.email = res.email; 
-            value.idNo = res.idNo; 
-            value.idType = res.idType; 
-            value.jobName = res.jobName; 
-            value.passwd = res.passwd; 
-            value.sex = res.sex; 
-            value.useId = res.useId; 
-            value.useName = res.useName; 
-            value.useNoMark = res.useNoMark;  
-            console.log(value.sex)       
-        // console.log(this,this.tableData);
-            // let min = document.getElementById("minMsgspan");
-            // min.style.display="block";
-            // min.innerHTML='操作'+res.msg;
-            // setTimeout(function () {
-            //     min.style.display="none";
-            // }, 2000);
+            this.editDate=res;
+            console.log(this.editDate)
         })  
 
     }
@@ -145,6 +139,9 @@ export class listComponent implements OnInit{
                 min.style.display="none";
             }, 2000);
         })  
+    }
+    editSubmit(data:any){
+        console.log(data);
     }
     
 }
