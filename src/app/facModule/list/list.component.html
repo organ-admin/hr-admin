@@ -1,4 +1,4 @@
-<div class="box">
+<div class="warp">
   <form id="form" #myForm = "ngForm" (ngSubmit) = "onSubmit(myForm.value)">
     <div><span>客户名称</span><input class="inp" ngModel type="text" name="cifName"/></div>
     <div><span>业务类型</span><input class="inp" ngModel type="text" name="bussType"/></div>  
@@ -7,7 +7,6 @@
     <div><input class="btns" type="submit" value="搜索"/></div>
   </form>
 </div>
-
 <h2 id="minMsgspan"></h2>
 <el-button type="primary" style="position:absolute;top:75px;right:40px;" routerLink="../add">添加</el-button>  
  <el-table [model]="tableData" [stripe]="true" center="all" [scroll-x]="true">

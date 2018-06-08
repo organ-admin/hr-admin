@@ -28,8 +28,12 @@
 #car{
     display:none;
 }
-#form{
+.box{
+    width: 100%;
     background: #cccccc;
+}
+#form{
+    width: 80%;
 }
 #form div{
     display: inline-block;
@@ -43,6 +47,10 @@
     padding-left: 10px;
     border-radius: 4px;
 }
+.brs{
+    display: block;
+    margin-top: 10px; 
+} 
 #minMsgspan{
     display:none;
     position: absolute;

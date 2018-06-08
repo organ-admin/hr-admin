@@ -18,6 +18,10 @@ export class listComponent implements OnInit{
     }
     private editShow:boolean=false;
     private detailsShow:boolean=false;
+    private tableUrld="/mer/user/select";
+    //编辑接口
+    private mysForm:any[];    
+    private tableUrlup="/mer/user/update";
     //删除接口
     private tableParam={};
     private tableUrls="/mer/user/delete";
@@ -69,8 +73,56 @@ export class listComponent implements OnInit{
         ref.destroy();
     }
     // 编辑
-    upbtns(ref: any): void {
+    upbtns(ref: any,value): void {
         this.editShow=true;
+        this.mysForm  = ref.rowData;
+        let row = ref.rowData;
+        this.tableParam={
+            id : row.id	                 	
+        };
+        this.ajax.post(this.tableUrld,this.tableParam).toPromise().then((res:any)=>{
+            console.log(res)
+            console.log(value)
+            // value=res.records;
+            value.cell = res.cell;
+            value.corpMark = res.corpMark;
+            value.corpName = res.corpName; 
+            value.email = res.email; 
+            value.idNo = res.idNo; 
+            value.idType = res.idType; 
+            value.jobName = res.jobName; 
+            value.passwd = res.passwd; 
+            value.sex = res.sex; 
+            value.useId = res.useId; 
+            value.useName = res.useName; 
+            value.useNoMark = res.useNoMark;  
+            console.log(value.sex)       
+        // console.log(this,this.tableData);
+            // let min = document.getElementById("minMsgspan");
+            // min.style.display="block";
+            // min.innerHTML='操作'+res.msg;
+            // setTimeout(function () {
+            //     min.style.display="none";
+            // }, 2000);
+        })  
+
+    }
+    onsbmit(value){
+        // let row = ref.rowData;
+        // this.tableParam={
+        //     id : row.id	                 	
+        // };
+        // this.ajax.post(this.tableUrl,this.tableParam).toPromise().then((res:any)=>{
+        //     console.log(res.records)
+        //     this.tableData=res.records;
+        //     console.log(this,this.tableData);
+        //     // let min = document.getElementById("minMsgspan");
+        //     // min.style.display="block";
+        //     // min.innerHTML='操作'+res.msg;
+        //     // setTimeout(function () {
+        //     //     min.style.display="none";
+        //     // }, 2000);
+        // })  
     }
     // 详情
     details(ref: any): void {
